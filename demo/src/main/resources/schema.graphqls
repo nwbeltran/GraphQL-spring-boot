@@ -1,0 +1,16 @@
+query {
+    init(requestID: String): {
+        requestID
+        appId
+        templateNumberSms
+        templateNumberEmail
+        previouslyAuthenticated
+        retake
+        correlationIDVerify
+        destinationVerify
+        finalStateVerify
+        correlationIDSign
+        destinationSign
+        finalStateSign
+    }
+}
