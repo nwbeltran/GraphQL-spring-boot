@@ -1,0 +1,30 @@
+type Authentication {
+  requestID: String
+  appId: Int
+  templateNumberSms: Int
+  templateNumberEmail: Int
+  previouslyAuthenticated: Boolean
+  retake: Boolean
+  correlationIDVerify: String
+  destinationVerify: String
+  finalStateVerify: String
+  correlationIDSign: String
+  destinationSign: String
+  finalStateSign: String
+}
+
+type ResponseOrquestation{
+    urlState:String
+    requestID:String
+}
+
+type Query {
+  init(requestID: String): Authentication
+}
+
+type Mutation {
+    delivery(
+        state: String
+        requestID: String
+    ):ResponseOrquestation
+}
